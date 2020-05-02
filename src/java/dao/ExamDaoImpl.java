@@ -27,14 +27,14 @@ public class ExamDaoImpl implements IExamDao {
 
     //constructor 
     public ExamDaoImpl() {
-        emf = Persistence.createEntityManagerFactory("CB10_APPPU2");  //name of persistence unit 
+        emf = Persistence.createEntityManagerFactory("cb10ft_scrumexamPU");  //name of persistence unit 
         em = emf.createEntityManager();
     }
 
     @Override
     public int saveUser(User user) {
         em.getTransaction().begin();
-        user.setUsername("ggg");
+        user.setUsername("ggg"); //input 
         em.persist(user);
         em.getTransaction().commit();
         return 1;
@@ -59,12 +59,4 @@ public class ExamDaoImpl implements IExamDao {
             System.out.println(qpa.getQuestions() + "\n" + qpa.getAnswers());
         }
 
-        /*  // @Override
-  //  public Result getResult(User user) {
-    //    Result result;
-        // em.createQuery(SELECT) 
-        //    = em.find(Result.class, user);
-        //    return result;
-        //  }
-      //  return null;
-    //} */
+    }

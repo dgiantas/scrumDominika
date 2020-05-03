@@ -8,6 +8,7 @@ package database;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,8 +21,7 @@ public class QuestionPossibleAnswers {
 
         
         public static ResultSet getQuestionById(int id) {
-        return Database.getResults(
-                "SELECT \n"+ "text_quest, text_ans\n"+ "FROM\n"+ "questions,\n"+ "answers\n" + "WHERE\n" + "questions.id = answers.question_id\n" + "AND questions.id = " + id + ";");
+        return Database.getResults("SELECT \n"+ "text_quest, text_ans\n"+ "FROM\n"+ "questions,\n"+ "answers\n" + "WHERE\n" + "questions.id = answers.question_id\n" + "AND questions.id = " + id + ";");
     }
         
 
@@ -32,11 +32,10 @@ public class QuestionPossibleAnswers {
         String answer;
        
         List<String> answers = new ArrayList();
-        for(String answer : answers) {
-                 System.out.println(question);
-        System.out.println(answers);
-         
-       
-    }
+            for (Iterator<String> it = answers.iterator(); it.hasNext();) {
+                String answer = it.next();
+                System.out.println(question);
+                System.out.println(answers);
+            }
        }
     

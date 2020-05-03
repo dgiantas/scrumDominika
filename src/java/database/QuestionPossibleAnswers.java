@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  * @author user
  */
 public class QuestionPossibleAnswers {
-
+       int id  =1;
         
         public static ResultSet getQuestionById(int id) {
         return Database.getResults("SELECT \n"+ "text_quest, text_ans\n"+ "FROM\n"+ "questions,\n"+ "answers\n" + "WHERE\n" + "questions.id = answers.question_id\n" + "AND questions.id = " + id + ";");
@@ -29,7 +29,7 @@ public class QuestionPossibleAnswers {
         ResultSet rs = getQuestionById(1);
         
         String question="question1";
-        String answer;
+       
        
         List<String> answers = new ArrayList();
             for (Iterator<String> it = answers.iterator(); it.hasNext();) {

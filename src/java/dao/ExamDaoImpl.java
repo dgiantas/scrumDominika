@@ -50,13 +50,17 @@ public class ExamDaoImpl implements IExamDao {
     }
 
     @Override
-    public List<QuestionPossibleAnswers> getQuestionsWithPossibleAnswers() {
+    public List<QuestionPossibleAnswers> getQuestionsWithPossibleAnswers(int id) {
 
         em.getTransaction().begin();
-        List<QuestionPossibleAnswers> questionsPossibleAnswers = em.createQuery("SELECT `questions.text`, answers.text_ans` FROM questions q, answers a", QuestionPossibleAnswers.class).getResultList();
-
-        for (QuestionPossibleAnswers qpa : questionsPossibleAnswers) {
-            System.out.println(qpa.getQuestions() + "\n" + qpa.getAnswers());
-        }
-
+        List<QuestionPossibleAnswers> questionsPossibleAnswers = em.createQuery ("SELECT q.text_quest, a.text_ans FROM questions q, answers a", QuestionPossibleAnswers.class).getResultList();
+   return questionsPossibleAnswers;
     }
+}
+       // for (QuestionPossibleAnswers qpa : questionsPossibleAnswers) {
+        //  System.out.println(qpa.getQuestions() + "\n" + qpa.getAnswers());  // καντο για id=1 
+          // φτιαχτω με το jbdc 
+      //  return 
+    
+
+    

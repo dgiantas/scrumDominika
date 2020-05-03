@@ -14,8 +14,7 @@
     <body>
         <h1>Hello World!</h1>
         <%
-            int x = 3, y = 3;
-            x++;
+         
            
         %>
     </body>

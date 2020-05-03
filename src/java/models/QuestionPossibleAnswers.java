@@ -5,6 +5,8 @@
  */
 package models;
 
+import database.Database;
+import java.sql.ResultSet;
 import java.util.List;
 
 /**
@@ -24,7 +26,6 @@ public class QuestionPossibleAnswers {
     }
     
     
-
     public Question getQuestion() {
         return question;
     }
@@ -44,7 +45,12 @@ public class QuestionPossibleAnswers {
     @Override
     public String toString() {
         return "QuestionPossibleAnswers{" + "question=" + question + ", answers=" + answers + '}';
-    }
     
+       
+    }
+
+  
     
 }
+
+ 

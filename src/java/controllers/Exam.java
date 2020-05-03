@@ -5,6 +5,7 @@
  */
 package controllers;
 
+import database.Database;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -24,6 +25,8 @@ import services.ExamImpl;
  */
 public class Exam extends HttpServlet {
     ExamImpl examService;
+     
+     database.QuestionPossibleAnswers qpa = new database.QuestionPossibleAnswers();
     
     public Exam(){
         examService = new ExamImpl();
@@ -49,6 +52,7 @@ public class Exam extends HttpServlet {
             out.println("<title>Servlet Exam</title>");            
             out.println("</head>");
             out.println("<body>");
+           
             out.println("<h1>Servlet Exam at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
@@ -68,7 +72,30 @@ public class Exam extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // Get questions from databse (get dummy data for now)
-        List<QuestionPossibleAnswers> questionsWithPossibleAnswers = examService.getQuestionsWithPossibleAnswers();
+        
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet Test</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            
+          //  out.println("<h1>Servlet Test at " + request.setAttribute()+ "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+     
+          List<QuestionPossibleAnswers> questionsWithPossibleAnswers = (List<QuestionPossibleAnswers>) database.QuestionPossibleAnswers.getQuestionsWithPossibleAnswers(); 
+        
+        }
+        
+        
+         
+        
+        
+        
         // Send questions to front
         request.setAttribute("questionsWithPossibleAnswers", questionsWithPossibleAnswers);
         RequestDispatcher rd = request.getRequestDispatcher("index.jsp");

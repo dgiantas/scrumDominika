@@ -10,7 +10,7 @@ public interface IExamDao {
 
     int saveUser(User user);
 
-    List<QuestionPossibleAnswers> getQuestionsWithPossibleAnswers();
+    List<QuestionPossibleAnswers> getQuestionsWithPossibleAnswers(int id);
 
     boolean saveSelectedAnswers(UserAnswers answer);
 }

@@ -3,22 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/scrumDB/src/java/models/QuestionSelectedAnswer.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/scrumDB/src/java/entities/User.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/scrumDB/src/java/dao/ExamDaoImpl.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/scrumDB/src/conf/persistence.xml</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/scrumDB/src/java/models/UserAnswers.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/scrumDB/src/java/models/Answer.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/scrumDB/web/META-INF/context.xml</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/scrumDB/src/java/dao/IExamDao.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/scrumDB/src/java/models/QuestionPossibleAnswers.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/scrumDB/src/java/controllers/Exam.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/scrumDB/src/java/dao/ExamDaoImpl.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/scrumDB/src/java/entities/Answer.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/scrumDB/src/java/services/IExam.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/scrumDB/src/java/models/QuestionRightAnswer.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/scrumDB/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/scrumDB/src/java/entities/Question.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/scrumDB/src/java/services/ExamImpl.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/scrumDB/src/java/entities/QuestionPossibleAnswers.java</file>
         </group>
     </open-files>
 </project-private>

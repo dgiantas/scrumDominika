@@ -14,31 +14,38 @@ import java.util.List;
  * @author Walter
  */
 public class QuestionPossibleAnswers {
+
     private int question_id;
-    private Question question;
+    private String question;
     private List<Answer> answers;
+    private List<QuestionPossibleAnswers> qpa;
 
     public QuestionPossibleAnswers(int question_id, List<Answer> answers) {
-        this.question_id = question_id;
+        this.question = question;
         this.answers = answers;
     }
-    
-    
 
     public QuestionPossibleAnswers() {
     }
 
-    public QuestionPossibleAnswers(Question question, List<Answer> answers) {
+   
+
+    public QuestionPossibleAnswers(String question, List<Answer> answers) {
         this.question = question;
         this.answers = answers;
     }
+
+    public QuestionPossibleAnswers(Question q2, List<Answer> q2PossibleAnswers) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
-    
-    public Question getQuestion() {
+
+    public String getQuestion() {
         return question;
     }
 
-    public void setQuestion(Question question) {
+    public void setQuestion(String question) {
         this.question = question;
     }
 
@@ -53,16 +60,11 @@ public class QuestionPossibleAnswers {
     @Override
     public String toString() {
         return "QuestionPossibleAnswers{" + "question=" + question + ", answers=" + answers + '}';
-    
-       
+
     }
 
     public void setId(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-  
-    
 }
-
- 

@@ -21,20 +21,13 @@ public class QuestionPossibleAnswers {
         
         private static ResultSet getQuestionById(int id) {
         return Database.getResults(
-                "SELECT \n"
-                + "    text_quest, text_ans\n"
-                + "FROM\n"
-                + "    questions,\n"
-                + "    answers\n"
-                + "WHERE\n"
-                + "    questions.id = answers.question_id\n"
-                + "        AND questions.id = " + id + ";");
+                "SELECT \n"+ "    text_quest, text_ans\n"+ "FROM\n"+ "    questions,\n"+ "    answers\n" + "WHERE\n" + "    questions.id = answers.question_id\n" + "        AND questions.id = " + id + ";");
     }
         
 
        public static void getQuestionWithPossibleAnswers() {
         ResultSet rs = getQuestionById(1);
-        String question="text";
+        String question="question1";
         String answer;
         List<String> answers = new ArrayList();
         try {

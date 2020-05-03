@@ -14,8 +14,16 @@ import java.util.List;
  * @author Walter
  */
 public class QuestionPossibleAnswers {
+    private int question_id;
     private Question question;
     private List<Answer> answers;
+
+    public QuestionPossibleAnswers(int question_id, List<Answer> answers) {
+        this.question_id = question_id;
+        this.answers = answers;
+    }
+    
+    
 
     public QuestionPossibleAnswers() {
     }
@@ -47,6 +55,10 @@ public class QuestionPossibleAnswers {
         return "QuestionPossibleAnswers{" + "question=" + question + ", answers=" + answers + '}';
     
        
+    }
+
+    public void setId(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
   

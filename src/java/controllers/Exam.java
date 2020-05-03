@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import models.QuestionPossibleAnswers;
 import models.User;
 import models.UserAnswers;
@@ -24,14 +25,15 @@ import services.ExamImpl;
  * @author Walter
  */
 public class Exam extends HttpServlet {
+
     ExamImpl examService;
-     
-     database.QuestionPossibleAnswers qpa = new database.QuestionPossibleAnswers();
-    
-    public Exam(){
+
+    models.QuestionPossibleAnswers qpa = new models.QuestionPossibleAnswers();
+    int i =1;
+    public Exam() {
         examService = new ExamImpl();
     }
-    
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -49,10 +51,10 @@ public class Exam extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Exam</title>");            
+            out.println("<title>Servlet Exam</title>");
             out.println("</head>");
             out.println("<body>");
-           
+
             out.println("<h1>Servlet Exam at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
@@ -72,34 +74,27 @@ public class Exam extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // Get questions from databse (get dummy data for now)
-        
+
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Test</title>");            
+            out.println("<title>Servlet Test</title>");
             out.println("</head>");
             out.println("<body>");
-            
-          //  out.println("<h1>Servlet Test at " + request.setAttribute()+ "</h1>");
+
+            //  out.println("<h1>Servlet Test at " + request.setAttribute()+ "</h1>");
             out.println("</body>");
             out.println("</html>");
-     
-          List<QuestionPossibleAnswers> questionsWithPossibleAnswers = (List<QuestionPossibleAnswers>) database.QuestionPossibleAnswers.getQuestionsWithPossibleAnswers(); 
-        
+            qpa.setId(1);
+            HttpSession s = request.getSession();
+        database.QuestionPossibleAnswers.getQuestionWithPossibleAnswers();
+          
         }
-        
-        
-         
-        
-        
-        
-        // Send questions to front
-        request.setAttribute("questionsWithPossibleAnswers", questionsWithPossibleAnswers);
-        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-        rd.forward(request, response);
+            
+
     }
 
     /**
@@ -114,12 +109,12 @@ public class Exam extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // Get user and selected answers from parameters
-        UserAnswers userAnswers = (UserAnswers)request.getAttribute("userAnswers");
+        UserAnswers userAnswers = (UserAnswers) request.getAttribute("userAnswers");
         User user = userAnswers.getUser();
         // Save to db via the examService
         examService.saveUser(user);
         examService.saveUserSelectedAnswers(userAnswers);
-       
+
         // Get Results
         examService.getResult(user);
         // Forward to index.jsp
